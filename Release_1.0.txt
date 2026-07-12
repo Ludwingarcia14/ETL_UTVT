@@ -1,0 +1,14 @@
+Release 1.0 - Proyecto ETL UTVT (CargaVentas)
+Autor: Ludwin Garcia Gaytan
+Fecha: 2026-07-11
+
+Contenido de la version:
+- Data Warehouse DWUTVTVentas (dimensiones, hechos y bitacora).
+- Paquete SSIS CargaVentas.dtsx con Control Flow y Data Flows completos.
+- Limpieza de datos, validaciones, deduplicacion y calculo de metricas (Subtotal, IVA 16%, Total).
+- Manejo de errores con Error Output, archivos Errores.csv y tabla LogErrores.
+- Automatizacion: mover archivos procesados y compresion en ZIP con fecha (Procesados_YYYYMMDD_HHMMSS.zip) via PowerShell.
+- Documentacion tecnica (diagramas, arquitectura, diccionario de datos) y evidencias de ejecucion.
+
+Resultados de carga verificados:
+- Clientes: 850 | Productos: 395 | Ventas: 3264 | Errores registrados: 1663
