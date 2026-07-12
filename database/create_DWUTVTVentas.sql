@@ -1,8 +1,16 @@
 /*==============================================================================
   Base de datos: DWUTVTVentas (Data Warehouse de Ventas)
   Archivo:       create_DWUTVTVentas.sql
-  Autor:         Octavio Duarte
+  Autor:         Ludwin Garcia Gaytan
   Fecha:         2026-07-03
+
+  Secciones:
+    1. Creacion de base de datos y esquema staging
+    2. Tablas de dimensiones (DimCliente, DimProducto)
+    3. Tabla de hechos (FactVentas)
+    4. Tablas de bitacora (LogErrores, LogProceso)
+    5. Procedimientos almacenados
+    6. Catalogo de categorias validas
 ==============================================================================*/
 
 IF DB_ID('DWUTVTVentas') IS NULL
