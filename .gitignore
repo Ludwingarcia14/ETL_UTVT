@@ -1,0 +1,17 @@
+@"
+# Carpetas generadas por Visual Studio / SSIS
+bin/
+obj/
+.vs/
+
+# Archivos de usuario y respaldo (config local, no se versiona)
+*.user
+*.bak
+*.dtproj.bak
+
+# Logs y temporales
+*.log
+*.tmp
+"@ | Out-File -FilePath .gitignore -Encoding utf8
+# Archivos de errores generados por cada corrida
+data/errores/
