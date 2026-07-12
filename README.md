@@ -162,3 +162,12 @@ La diferencia entre leídos y (insertados + errores) corresponde a los registros
 - **Conteo por primer match**: el Conditional Split deriva cada fila por la **primera** condición que cumple, por lo que un registro con múltiples defectos se registra una sola vez, con el motivo de mayor prioridad.
 - **Row Count "leídos" antes de deduplicar**: los conteos de "leídos" reflejan las filas crudas del archivo (antes del Sort), de modo que `Leídos = Insertados + Errores + Duplicados`.
 - **Idempotencia**: los índices únicos sobre las columnas de origen permiten re-ejecutar el paquete sin generar duplicados.
+
+## Ejecución rápida (instancia local)
+
+1. En SSMS, conéctate a tu instancia local (`.\SQLEXPRESS`) y ejecuta `database/create_DWUTVTVentas.sql` para crear el Data Warehouse.
+2. Abre `Proyecto_ETL_UTVT.slnx` en Visual Studio (con la extensión *SQL Server Integration Services Projects*).
+3. Verifica que el connection manager `cm_DWUTVTVentas` apunte a `.\SQLEXPRESS` (Test Connection).
+4. Ejecuta `CargaVentas.dtsx` (Execute Package). Al finalizar se genera `data/procesados/Procesados_YYYYMMDD_HHMMSS.zip`.
+
+Para re-ejecutar desde cero: restaura los CSV con `copy data\respaldo\*.csv data\entrada\` y limpia las tablas (ver sección "Cómo re-probar desde cero").
